@@ -1,0 +1,7 @@
+-@news.each do |a_news|
+  %div#news 
+    %span= a_news[:screen_name]
+    %img{:src => a_news[:user_profile_image_url]}
+    %span= a_news[:tweet_text]
+    %a{:href => a_news[:url][0], :target => :_blank} url
+
