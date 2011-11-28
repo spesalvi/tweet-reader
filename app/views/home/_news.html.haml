@@ -1,0 +1,11 @@
+%div#news
+  %div.tweet-details
+    %div.user
+      %div
+        %img{ :src => news[:user_profile_image_url] }
+      %div 
+        =news[:screen_name]
+    %span 
+      =news[:tweet_text]
+    %div.clearer
+  %iframe{ :src => news[:url][0], :width => "100%", :frameborder => "0", :height => "", :noresize => "noresize", :style => "" }
