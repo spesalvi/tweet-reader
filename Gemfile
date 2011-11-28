@@ -21,6 +21,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'twitter'
 gem 'haml'
+gem 'pg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

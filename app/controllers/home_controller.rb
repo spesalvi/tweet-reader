@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     configure
     @news = get_latest_news
+    @news = @news[0]
   end
 
   private
