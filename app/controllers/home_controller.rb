@@ -20,13 +20,14 @@ class HomeController < ApplicationController
     news = []
     timeline = Twitter.home_timeline(:include_entities => true)
     timeline.each do |time_line|
-      next if time_line.entities.urls.empty?
+
+      next if time_line.attrs['entities']['urls'].empty?
       a_news = { :screen_name => time_line.user.screen_name,
         :user_profile_image_url => time_line.user.profile_image_url,
         :tweet_text => time_line.text,
         :url => []}
-      time_line.entities.urls.each do |url|
-        a_news[:url].push (! url.expanded_url.nil? ? url.expanded_url : url.url)
+      time_line.attrs['entities']['urls'].each do |url|
+        a_news[:url].push (! url['expanded_url'].nil? ? url['expanded_url'] : url['url'])
       end
       news.push a_news
     end 
